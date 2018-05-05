@@ -13,7 +13,7 @@ def get_user_from_url(url):
             user_list.append(summoner_name)
     return user_list
 
-def get_user_list(start=1, end=22407, step=224):
+def get_user_list(start=1, end=22900, step=200):
     base_url = "http://www.op.gg/ranking/ladder/page={}"
     user_list = ['GabrielCRO', 'DWG ShowMaker', 'yizhiyu', 'MVP ADD', 'SKT T1 Bang']
     for page_num in range(start, end, step):
@@ -22,4 +22,8 @@ def get_user_list(start=1, end=22407, step=224):
     return user_list
 
 if __name__ == "__main__":
-    get_user_list()
+    user_list = get_user_list()
+    f = open("user_list.txt", "w")
+    for user in user_list:
+        f.write(user +'\n')
+    f.close()

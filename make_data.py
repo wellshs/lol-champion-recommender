@@ -3,10 +3,12 @@ from get_user import get_user_list
 import numpy as np
 
 data_list = []
-user_list = get_user_list()
-for idx, user in enumerate(user_list):
-    print(idx)
-    user_data = extract_feature_from_name(user)
+f = open("user_list.txt", "r")
+user_list = f.readlines()
+f.close()
+
+for user in user_list:
+    user_data = extract_feature_from_name(user.strip())
     data_list.append(user_data)
 
 data = np.array(data_list)
