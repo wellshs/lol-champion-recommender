@@ -13,7 +13,7 @@ def get_user_from_url(url):
             user_list.append(summoner_name)
     return user_list
 
-def get_user_list(start=1, end=22900, step=200):
+def get_user_list(start=1, end=22903, step=1):
     base_url = "http://www.op.gg/ranking/ladder/page={}"
     user_list = ['GabrielCRO', 'DWG ShowMaker', 'yizhiyu', 'MVP ADD', 'SKT T1 Bang']
     for page_num in range(start, end, step):
